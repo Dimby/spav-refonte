@@ -6,12 +6,12 @@ const useStyles = createUseStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: 15
+    gap: ({gap}) => gap && gap
   },
 }))
 
-const Grouped = ({ children, styles }) => {
-  const classes = useStyles();
+const Grouped = ({ children, gap = 15, styles }) => {
+  const classes = useStyles({gap});
 
   return (
     <div className={classNames(classes.container, styles?.groupedContainer)}>

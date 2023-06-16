@@ -26,7 +26,8 @@ const useStyles = createUseStyles(theme => ({
   },
   author: {
     fontFamily: 'Lato-Light',
-    fontSize: ({ variant }) => variant === 'mullingar' ? 17 : 14
+    fontSize: ({ variant }) => variant === 'mullingar' ? 17 : 14,
+    marginTop: 10
   }
 }))
 
