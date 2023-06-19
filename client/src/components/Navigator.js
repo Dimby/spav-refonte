@@ -9,7 +9,7 @@ const useStyles = createUseStyles(theme => ({
     fontSize: 26,
     display: 'flex',
     alignItems: 'center',
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
     margin: ({ isDownPosition }) => isDownPosition ? '25px 0 0 0' : '0 0 25px 0',
     justifyContent: ({isDownPosition}) => isDownPosition && 'end'
   },
@@ -21,7 +21,7 @@ const useStyles = createUseStyles(theme => ({
     },
   },
   icon: {
-    backgroundColor: '#F4C247',
+    backgroundColor: theme.color.primary['DEFAULT'],
     display: 'inline-block',
     width: 40,
     height: 40,

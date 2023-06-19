@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { createUseStyles } from 'react-jss';
 import Text from '../../components/Text';
 import Page from '../../components/Page';
-import { COMMITTEE } from '../../misc/utils';
 import Avatar from '../../components/Avatar';
 import Preview from '../../components/Preview';
+import { COMMITTEE } from '../../misc/aboutus';
 
 const useStyles = createUseStyles(theme => ({
   container: {
@@ -13,7 +13,7 @@ const useStyles = createUseStyles(theme => ({
     gap: 50
   },
   title: {
-    color: '#F4C247'
+    color: theme.color.primary['DEFAULT']
   },
   left: {
     maxWidth: 414

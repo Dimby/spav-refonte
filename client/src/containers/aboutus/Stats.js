@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Page from '../../components/Page';
 import Text from '../../components/Text';
-import { DELEGES_DATA, GENERAL_DATA, PASTORS_DATA, SEFALA_DATA, STATS_GENERAL_HEADER, STATS_MENU, STATS_PASTOR_AND_DELEGE_HEADER, STATS_SEFALA_HEADER } from '../../misc/utils';
 import Table from '../../components/Table';
+import { DELEGES_DATA, GENERAL_DATA, PASTORS_DATA, SEFALA_DATA, STATS_GENERAL_HEADER, STATS_MENU, STATS_PASTOR_AND_DELEGE_HEADER, STATS_SEFALA_HEADER } from '../../misc/aboutus';
 
 const useStyles = createUseStyles(theme => ({
   container: {
@@ -12,7 +12,7 @@ const useStyles = createUseStyles(theme => ({
   },
   titleContainer: {},
   title: {
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
     lineHeight: '45px',
     marginBottom: 15,
   },

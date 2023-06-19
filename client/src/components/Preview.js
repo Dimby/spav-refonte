@@ -43,7 +43,7 @@ const useStyles = createUseStyles(theme => ({
     color: '#FFFFFF'
   },
   contacts: {
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
     marginBottom: 10
   },
   infos: {

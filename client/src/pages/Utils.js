@@ -23,7 +23,7 @@ const useStyles = createUseStyles(theme => ({
     justifyContent: 'space-between'
   },
   downloadButton: {
-    color: '#F4C247'
+    color: theme.color.primary['DEFAULT']
   },
   table: {
     marginTop: 20
@@ -36,14 +36,14 @@ const useStyles = createUseStyles(theme => ({
     borderTop: '0.5px solid #DFD6D6'
   },
   citationContainer: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
   },
   infoLeft: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
     textAlign: 'right'
   },
   infoRight: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
   }
 }))
 

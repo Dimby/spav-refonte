@@ -25,11 +25,11 @@ const useStyles = createUseStyles(theme => ({
     }
   },
   primary: {
-    backgroundColor: '#006AB0',
+    backgroundColor: theme.color.secondary['DEFAULT'],
   },
   primaryOutline: {
-    color: '#006AB0',
-    border: '1px solid #006AB0'
+    color: theme.color.secondary['DEFAULT'],
+    border: `1px solid ${theme.color.secondary['DEFAULT']}`
   },
   secondary: {
     backgroundColor: '#FFD160',
@@ -39,11 +39,11 @@ const useStyles = createUseStyles(theme => ({
   },
   default: {
     backgroundColor: '#FFFFFF',
-    color: '#006AB0'
+    color: theme.color.secondary['DEFAULT']
   },
   defaultOutline: {
     backgroundColor: '#FFFFFF',
-    color: '#006AB0'
+    color: theme.color.secondary['DEFAULT']
   },
 }))
 

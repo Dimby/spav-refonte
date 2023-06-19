@@ -25,6 +25,9 @@ const useStyles = createUseStyles(theme => ({
     borderCollapse: 'collapse',
     width: '100%',
     height: '100%',
+    '& tbody tr': {
+      backgroundColor: '#FFFFFF'
+    },
     '& thead': {
       backgroundColor: 'rgba(243, 243, 243, .64)'
     },
@@ -80,7 +83,7 @@ const Table = ({ title, headerData = [], rowsData = [], withSearch = false, filt
   return (
     <div className={classNames(classes.container, styles?.tableContainer)}>
       <div className={classes.titleContainer}>
-        <div className={classes.title}>{title}</div>
+        <div className={classNames(classes.title, styles?.title)}>{title}</div>
         <Input styles={{inputContainer: classes.inputSearch}} onChange={(e) => setValue(e.target.value)} />
       </div>
       <table className={classes.table}>

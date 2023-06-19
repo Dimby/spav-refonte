@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import leftBgImage from '../assets/bg-01.jpg';
 
 import classNames from 'classnames';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import Citation from '../components/Citation';
 import Grouped from '../components/Grouped';
@@ -66,6 +66,7 @@ const useStyles = createUseStyles(theme => ({
 const Dashboard = () => {
   const {pathname} = useLocation();
   const classes = useStyles({leftBgImage, pathname});
+  const navigate = useNavigate();
 
   let content;
   let widthSection = classes.notDashboard;
@@ -80,7 +81,7 @@ const Dashboard = () => {
                 </div>
                 <Citation styles={{ citationContainer: classes.citationContainer }} author='Vakio : And. 01 : 21'>Anorenana ny maha kristiana ny finoana.</Citation>
                 <Grouped>
-                  <Button>Mombamomba</Button>
+                  <Button onClick={() => navigate('aboutUs')}>Mombamomba</Button>
                   <Button variant='default'>Te hifandray ?</Button>
                 </Grouped>
               </div>

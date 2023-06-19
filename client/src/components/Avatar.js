@@ -5,9 +5,9 @@ const useStyles = createUseStyles(theme => ({
   container: {
     width: 94,
     height: 94,
-    border: ({ isActive }) => isActive ? '4px solid #F4C247' : '4px solid #FFFFFF',
+    border: ({ isActive }) => isActive ? `4px solid ${theme.color.primary['DEFAULT']}` : '4px solid #FFFFFF',
     '&:hover': {
-      borderColor: '#F4C247'
+      borderColor: theme.color.primary['DEFAULT']
     },
     borderRadius: 10,
     cursor: 'pointer',

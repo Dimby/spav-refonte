@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { createUseStyles } from 'react-jss';
 import Page from '../../components/Page';
 import Text from '../../components/Text';
-import { PS_ONE_AFTER_OTHER } from '../../misc/utils';
 import PsCursus from '../../components/PsCursus';
 import Preview from '../../components/Preview';
+import { PS_ONE_AFTER_OTHER } from '../../misc/aboutus';
 
 const useStyles = createUseStyles(theme => ({
   container: {
@@ -20,7 +20,7 @@ const useStyles = createUseStyles(theme => ({
     maxWidth: 400,
   },
   title: {
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
     lineHeight: '45px',
     marginBottom: 15
   },
