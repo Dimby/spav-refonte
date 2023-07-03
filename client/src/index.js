@@ -4,14 +4,18 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Routes from './Routes';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'react-jss';
+import { DEFAULT } from './common/theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <QueryClientProvider client={queryClient}> */}
+    <ThemeProvider theme={DEFAULT}>
       <BrowserRouter>
         <Routes/>
       </BrowserRouter>
+    </ThemeProvider>
       {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     {/* </QueryClientProvider> */}
   </React.StrictMode>

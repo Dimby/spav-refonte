@@ -23,7 +23,7 @@ const useStyles = createUseStyles(theme => ({
     justifyContent: 'space-between'
   },
   downloadButton: {
-    color: '#F4C247'
+    color: theme.color.primary['DEFAULT']
   },
   table: {
     marginTop: 20
@@ -36,14 +36,14 @@ const useStyles = createUseStyles(theme => ({
     borderTop: '0.5px solid #DFD6D6'
   },
   citationContainer: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
   },
   infoLeft: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
     textAlign: 'right'
   },
   infoRight: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
   }
 }))
 
@@ -74,7 +74,7 @@ const Utils = () => {
           </div>
           <div className={classes.infoRight}>
             <div style={{ marginBottom: 10 }}>Te hifandray aminay ? Mandefasa hafatra</div>
-            <Button variant='primaryOutline' onClick={() => navigate('utils')}>Handefa hafatra</Button>
+            <Button variant='primaryOutline' onClick={() => navigate('/contact')}>Handefa hafatra</Button>
           </div>
         </div>
       </div>

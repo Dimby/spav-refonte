@@ -26,7 +26,7 @@ const useStyles = createUseStyles((theme) => ({
     position: 'absolute',
     top: 4,
     right: '-34px',
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
   },
   blur: {
     opacity: 0.8,

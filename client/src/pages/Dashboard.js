@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import leftBgImage from '../assets/bg-01.jpg';
 
 import classNames from 'classnames';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import Citation from '../components/Citation';
 import Grouped from '../components/Grouped';
@@ -31,7 +31,9 @@ const useStyles = createUseStyles(theme => ({
     backgroundImage: ({leftBgImage}) => leftBgImage && `url(${leftBgImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    position: 'relative',
+    zIndex: 998
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
@@ -59,13 +61,15 @@ const useStyles = createUseStyles(theme => ({
     margin: '25px 0 30px 0'
   },
   rightSection: {
-    
+    position: 'relative',
+    zIndex: 999
   },
 }))
 
 const Dashboard = () => {
   const {pathname} = useLocation();
   const classes = useStyles({leftBgImage, pathname});
+  const navigate = useNavigate();
 
   let content;
   let widthSection = classes.notDashboard;
@@ -80,8 +84,8 @@ const Dashboard = () => {
                 </div>
                 <Citation styles={{ citationContainer: classes.citationContainer }} author='Vakio : And. 01 : 21'>Anorenana ny maha kristiana ny finoana.</Citation>
                 <Grouped>
-                  <Button>Mombamomba</Button>
-                  <Button variant='default'>Te hifandray ?</Button>
+                  <Button onClick={() => navigate('aboutUs')}>Mombamomba</Button>
+                  <Button variant='default' onClick={() => navigate('contact')}>Te hifandray ?</Button>
                 </Grouped>
               </div>
   } else if(pathname === '/gallery') {

@@ -9,7 +9,7 @@ const useStyles = createUseStyles(theme => ({
     width: '90%',
   },
   title: {
-    color: '#F4C247',
+    color: theme.color.primary['DEFAULT'],
     lineHeight: '45px',
     marginBottom: 15,
   },
@@ -17,7 +17,7 @@ const useStyles = createUseStyles(theme => ({
     marginTop: 50
   },
   titleBody: {
-    color: '#006AB0'
+    color: theme.color.secondary['DEFAULT']
   }
 }))
 

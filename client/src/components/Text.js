@@ -17,7 +17,7 @@ const useStyles = createUseStyles(theme => ({
     fontSize: '26px',
   },
   primary: {
-    color: '#006AB0',
+    color: theme.color.secondary['DEFAULT'],
   },
   secondary: {
     color: '#FFD160',
