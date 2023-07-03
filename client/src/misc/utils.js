@@ -5,7 +5,16 @@ export const MENUS = [
   {name: 'Mombamomba', to: 'aboutUs', x: -100},
   {name: 'Faritra', to: 'areas', x: -20},
   {name: 'Sary', to: 'gallery', x: -100},
-  {name: 'Fifandraisana', to: '/', x: -30},
+  {name: 'Fifandraisana', to: 'contact', x: -30},
+]
+
+export const STAND_OUT = [
+  {date: '15 Jona 2023',title: 'Hafatry ny PS', name: 'PS Rasolonirina Robert', url: 'ps.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
+  {date: '15 Jona 2023',title: 'Hafatry ny Filohan\'ny FJKM', name: 'Dr, Pr Irako Andriamahazosoa Ammi', url: 'filoha.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
+  {date: '15 Jona 2023',title: 'Fanokanana Mpitandrina #1', name: 'Mpitandrina #1', url: 'mpitandrina.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
+  {date: '15 Jona 2023',title: 'Fanokanana Mpitandrina #2', name: 'Mpitandrina #2', url: 'mpitandrina.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
+  {date: '15 Jona 2023',title: 'Fanokanana Mpitandrina #3', name: 'Mpitandrina #3', url: 'mpitandrina.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
+  {date: '15 Jona 2023',title: 'Fivoriamben\'ny SP 2023', name: 'Fivoriambe SP 2023', url: 'fivoriambeSP2023.jpg', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id fugiat facilis laboriosam ipsam voluptatum vel placeat sequi eius veritatis alias unde, repellendus numquam dolore et? Corrupti officiis ipsum laudantium magni.'},
 ]
 
 export const FILES_HEADER = [

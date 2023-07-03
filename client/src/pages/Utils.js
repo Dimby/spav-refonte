@@ -74,7 +74,7 @@ const Utils = () => {
           </div>
           <div className={classes.infoRight}>
             <div style={{ marginBottom: 10 }}>Te hifandray aminay ? Mandefasa hafatra</div>
-            <Button variant='primaryOutline' onClick={() => navigate('utils')}>Handefa hafatra</Button>
+            <Button variant='primaryOutline' onClick={() => navigate('/contact')}>Handefa hafatra</Button>
           </div>
         </div>
       </div>

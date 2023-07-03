@@ -5,6 +5,7 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles(theme => ({
   container: {
     textTransform: 'uppercase',
+    textWrap: 'nowrap',
     height: 60,
     width: 'fit-content',
     display: 'flex',
@@ -25,6 +26,7 @@ const useStyles = createUseStyles(theme => ({
     }
   },
   primary: {
+    color: '#FFFFFF',
     backgroundColor: theme.color.secondary['DEFAULT'],
   },
   primaryOutline: {

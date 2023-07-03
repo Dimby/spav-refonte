@@ -31,7 +31,9 @@ const useStyles = createUseStyles(theme => ({
     backgroundImage: ({leftBgImage}) => leftBgImage && `url(${leftBgImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    position: 'relative',
+    zIndex: 998
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
@@ -59,7 +61,8 @@ const useStyles = createUseStyles(theme => ({
     margin: '25px 0 30px 0'
   },
   rightSection: {
-    
+    position: 'relative',
+    zIndex: 999
   },
 }))
 
@@ -82,7 +85,7 @@ const Dashboard = () => {
                 <Citation styles={{ citationContainer: classes.citationContainer }} author='Vakio : And. 01 : 21'>Anorenana ny maha kristiana ny finoana.</Citation>
                 <Grouped>
                   <Button onClick={() => navigate('aboutUs')}>Mombamomba</Button>
-                  <Button variant='default'>Te hifandray ?</Button>
+                  <Button variant='default' onClick={() => navigate('contact')}>Te hifandray ?</Button>
                 </Grouped>
               </div>
   } else if(pathname === '/gallery') {

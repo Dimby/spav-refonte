@@ -6,13 +6,23 @@ import CardAboutArea from './CardAboutArea';
 import { ABOUT_AREA_MENU, AREA_HEADER } from '../misc/areas';
 import Table from './Table';
 import { padWithLeadingZeros } from '../misc/utils';
-import { IconClockFilled } from '@tabler/icons-react';
+import { IconClockFilled, IconPhoto } from '@tabler/icons-react';
 import News from './News';
+import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = createUseStyles(theme => ({
   container: {
     color: theme.color.secondary['DEFAULT'],
     padding: '0 50px'
+  },
+  titleContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  titleLeftContent: {
+    width: 600
   },
   title: {
     color: theme.color.primary['DEFAULT']
@@ -67,6 +77,7 @@ const useStyles = createUseStyles(theme => ({
 
 const AreaContainer = ({ data, activeItem, refs, setActiveItem }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
   const { name, description, about, churchs, news } = data;
   const currentDate = new Date();
   const pastNews = [];
@@ -91,10 +102,16 @@ const AreaContainer = ({ data, activeItem, refs, setActiveItem }) => {
   return (
     <Page activeItem={activeItem} refs={refs} setActiveItem={setActiveItem}>
       <div className={classes.container}>
-        <Text styles={{ textContainer: classes.title }} variant='h2' color='default'>{name}</Text>
-        <p>{description}</p>
+        <div className={classes.titleContainer}>
+          <div className={classes.titleLeftContent}>
+            <Text styles={{ textContainer: classes.title }} variant='h2' color='default'>{name}</Text>
+            <p>{description}</p>
+          </div>
+          <div>
+            <Button variant='primaryOutline' icon={<IconPhoto/>} onClick={() => navigate('/gallery')} >Hijery sary</Button>
+          </div>
+        </div>
         <div className={classes.descriptionContainer}>
-
           <div className={classes.aboutContainer}>
             <Text variant='h3' styles={{ textContainer: classes.about }} color='primary'>Mombamomba</Text>
             <div className={classes.aboutGraph}>
