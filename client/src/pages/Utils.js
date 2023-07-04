@@ -57,8 +57,8 @@ const Utils = () => {
     const addedAt = item?.addedAt || '--/--/----';
     const taille = item?.taille || '- Ko';
     const download = <IconText icon={<IconCloudDownload/>} styles={{ iconTextContainer: classes.downloadButton }} text='Cliquer ici' />;
-    return {name, description, addedAt, taille, download};
-  })
+    return {id: item?.id, name, description, addedAt, taille, download};
+  });
 
   return (
     <div className={classes.container}>

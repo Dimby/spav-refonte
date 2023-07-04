@@ -3,6 +3,8 @@ import { createUseStyles } from 'react-jss';
 import Text from '../components/Text';
 import Button from '../components/Button';
 import { IconArrowRight } from '@tabler/icons-react';
+import { useLocation } from 'react-router';
+import { getMessage } from '../misc/utils';
 
 const useStyles = createUseStyles(theme => ({
   container: {
@@ -39,7 +41,8 @@ const useStyles = createUseStyles(theme => ({
     },
     '& textarea': {
       fontFamily: 'Lato-Regular',
-      marginTop: 25
+      marginTop: 25,
+      width: 660
     }
   },
   info: {
@@ -49,6 +52,9 @@ const useStyles = createUseStyles(theme => ({
 
 const Contact = () => {
   const classes = useStyles();
+  const location = useLocation();
+  const message = location.pathname.includes('file') && getMessage(location);
+
   return (
     <div className={classes.container}>
       <Text styles={{ textContainer: classes.title }} variant='h3'>Fifandraisana</Text>
@@ -65,23 +71,23 @@ const Contact = () => {
           <input type='text' placeholder='Fanampiny' />
         </div>
         <div className={classes.formControl}>
-          <input type='text' placeholder='Synodamparitany *' />
+          <input type='text' placeholder='Synodamparitany *' required />
         </div>
         <div className={classes.formControl}>
-          <input type='text' placeholder='Fitandremana *' />
+          <input type='text' placeholder='Fitandremana *' required />
         </div>
         <div className={classes.formControl}>
           <input type='text' placeholder='Laharana' />
         </div>
         <div className={classes.formControl}>
-          <input type='text' placeholder='Adiresy mailaka *' />
+          <input type='text' placeholder='Adiresy mailaka *' required />
         </div>
         <div>
           <div className={classes.formControl}>
             <input type='text' placeholder='Adiresy handefasana' />
           </div>
           <div className={classes.formControl}>
-            <textarea rows={3} placeholder='Soraty eto ny hafatra *'></textarea>
+            <textarea rows={message ? 11 : 3} placeholder='Soraty eto ny hafatra *' required>{message ? message : ''}</textarea>
           </div>
         </div>
       </div>

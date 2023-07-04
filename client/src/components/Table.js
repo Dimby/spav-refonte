@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { useDebounce } from 'react-use';
 import Input from './Input';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router';
 
 const useStyles = createUseStyles(theme => ({
   container: {
@@ -57,6 +58,7 @@ const Table = ({ title, headerData = [], rowsData = [], withSearch = false, filt
   const classes = useStyles();
   const [rows, setRows] = useState([]);
   const [value, setValue] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     if(rowsData) {
@@ -74,9 +76,15 @@ const Table = ({ title, headerData = [], rowsData = [], withSearch = false, filt
   }, 500, [value]);
 
   const allRows = rows.map((item, keyTr) => {
-    const values = Object.entries(item).map(item => item[1]);
+    const { id, ...itemTemp } = item;
+    const values = Object.entries(itemTemp);
     return <tr key={keyTr}>
-      {values.map((value, key) => <td key={key}>{value}</td>)}
+      {values.map((value, key) => {
+        if(value[0] === 'download') {
+          return <td key={key} onClick={() => navigate(`/contact/file/${id}`)}>{value[1]}</td>
+        }
+        return <td key={key}>{value[1]}</td>
+      })}
     </tr>
   })
 
