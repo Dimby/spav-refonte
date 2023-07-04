@@ -1,4 +1,4 @@
-import { IconCloudDownload, IconFileZip } from "@tabler/icons-react";
+import { IconFileZip } from "@tabler/icons-react";
 
 export const MENUS = [
   {name: 'Fandraisana', to: '', x: -50},
@@ -39,13 +39,13 @@ export const getAreaByName = (name) => {
 }
 
 export const FILES_ROWS = [
-  {name: 'Tetikandro2021.docx', description: "Tetikandron'ny PS - taona 2021", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Tetikandron'ny PS - taona 2022", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Fitsipi-pifehezana anatin'ny SP", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Vina sy Fanambin'ny SP", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Hira fanevan'ny SP", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Logo SPAV05 - jobily 25e", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
-  {name: 'Tetikandro2021.docx', description: "Circulaire ho an'ny FItandremana", addedAt: '09/07/2021', taille: '351 Ko', download: <><IconCloudDownload/> Cliquer ici</>},
+  {id: '01', name: 'Tetikandro2021.docx', description: "Tetikandron'ny PS - taona 2021", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '02', name: 'Tetikandro2022.docx', description: "Tetikandron'ny PS - taona 2022", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '03', name: 'fitsipipifehezanaSPAV05.docx', description: "Fitsipi-pifehezana anatin'ny SP", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '04', name: 'vinasyfanamby.docx', description: "Vina sy Fanambin'ny SP", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '05', name: 'hirafaneva.docx', description: "Hira fanevan'ny SP", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '06', name: 'logoSPAV05.docx', description: "Logo SPAV05 - jobily 25e", addedAt: '09/07/2021', taille: '351 Ko'},
+  {id: '07', name: 'circulaire23062023.docx', description: "Circulaire ho an'ny Fitandremana", addedAt: '09/07/2021', taille: '351 Ko'},
 ]
 
 export const LEFT_CONTENTS = [
@@ -164,5 +164,21 @@ export const getFullDayToString = (date, formatted = false) => {
   }
   return formattedDate
 }
-
 // FIN
+
+export const getMessage = (location) => {
+  const url = location.pathname.split('/');
+  const fileId = url[url.length - 1];
+  const file = FILES_ROWS.find(file => file.id === fileId);
+  
+  return `Miarahaba tompoko,
+
+    Anaran'ny fichier : ${file?.name},
+    Antony ilana azy :
+    
+    Izaho dia manaiky fa tsy hampiasa azy io amin'ny zavatra mety hifanohitra amin'ny fitsipiky ny FJKM.
+    Raha sendra misy izay dia tompon'andraikitra amin'izany aho.
+
+    Misaotra indrindra.
+  `
+}
